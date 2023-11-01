@@ -32,9 +32,20 @@ colors = [
     ["#5e81ac", "#5e81ac"],  # 13 super blue
     ["#242831", "#242831"],  # 14 super dark background
 ]
+# fmt: off
+fonts = {
+    "primary": "JetBrainsMono Nerd Font"
+    }
 
-fonts = {"primary": "JetBrainsMono Nerd Font"}
-
+fontSize = {
+    "IconLarge": "30",
+    "h1": 25,
+    "h2": 15,
+    "h3": 12,
+    "h4": 7,
+    "frame": 20,
+    }
+# fmt: on
 super = "mod4"
 alt = "mod1"
 control = "control"
@@ -100,8 +111,8 @@ layouts = [
 
 widget_defaults = dict(
     font=fonts["primary"],
-    fontsize=18,
-    padding=3,
+    fontsize=fontSize["h2"],
+    padding=0,
     background=colors[0],
     decorations=[
         BorderDecoration(
@@ -169,10 +180,10 @@ screens = [
             [
                 widget.TextBox(
                     text="",
-                    foreground=colors[13],
+                    foreground=colors[1],
                     background=colors[0],
                     font=fonts["primary"],
-                    fontsize=28,
+                    fontsize=fontSize["IconLarge"],
                     padding=20,
                     mouse_callbacks={"Button1": lazy.spawn(rofi)},
                 ),
@@ -184,6 +195,7 @@ screens = [
                 ),
                 widget.Notify(
                     font=fonts["primary"],
+                    fontsize=fontSize["h2"],
                     foreground=colors[1],
                     background=colors[0],
                     action=True,
@@ -203,14 +215,14 @@ screens = [
                     font=fonts["primary"],
                     foreground=colors[14],
                     background=colors[0],
-                    fontsize=30,
+                    fontsize=fontSize["frame"],
                     padding=0,
                 ),
                 widget.Clock(
                     format="%A, %b %d %Y | %H:%M:%S",
                     background=colors[14],
                     foreground=colors[1],
-                    fontsize=15,
+                    fontsize=fontSize["h3"],
                     padding=0,
                 ),
                 widget.TextBox(
@@ -218,7 +230,7 @@ screens = [
                     font=fonts["primary"],
                     foreground=colors[14],
                     background=colors[0],
-                    fontsize=40,
+                    fontsize=fontSize["frame"],
                     padding=0,
                 ),
                 widget.Spacer(),
@@ -233,7 +245,7 @@ screens = [
                     font=fonts["primary"],
                     foreground=colors[14],
                     background=colors[0],
-                    fontsize=28,
+                    fontsize=fontSize["frame"],
                     padding=0,
                 ),
                 widget.TextBox(
@@ -241,14 +253,14 @@ screens = [
                     font=fonts["primary"],
                     foreground=colors[1],
                     background=colors[14],
-                    fontsize=10,
+                    fontsize=fontSize["h4"],
                     padding=0,
                 ),
                 widget.CPU(
                     font=fonts["primary"],
                     foreground=colors[1],
                     background=colors[14],
-                    fontsize=15,
+                    fontsize=fontSize["h3"],
                     markup=True,
                     format="{freq_current}GHz {load_percent}%",
                 ),
@@ -257,21 +269,21 @@ screens = [
                     font=fonts["primary"],
                     foreground=colors[1],
                     background=colors[14],
-                    fontsize=10,
+                    fontsize=fontSize["h4"],
                     padding=0,
                 ),
                 widget.NvidiaSensors(
                     font=fonts["primary"],
                     foreground=colors[1],
                     background=colors[14],
-                    fontsize=15,
+                    fontsize=fontSize["h3"],
                 ),
                 widget.TextBox(
                     text="",
                     font=fonts["primary"],
                     foreground=colors[14],
                     background=colors[0],
-                    fontsize=28,
+                    fontsize=fontSize["frame"],
                     padding=0,
                 ),
                 widget.TextBox(
@@ -279,7 +291,7 @@ screens = [
                     font=fonts["primary"],
                     foreground=colors[14],
                     background=colors[0],
-                    fontsize=28,
+                    fontsize=fontSize["frame"],
                     padding=0,
                 ),
                 widget.NetGraph(
@@ -301,7 +313,7 @@ screens = [
                     font=fonts["primary"],
                     foreground=colors[14],
                     background=colors[0],
-                    fontsize=28,
+                    fontsize=fontSize["frame"],
                     padding=0,
                 ),
                 widget.Sep(
@@ -315,7 +327,7 @@ screens = [
                     font=fonts["primary"],
                     foreground=colors[14],
                     background=colors[0],
-                    fontsize=28,
+                    fontsize=fontSize["frame"],
                     padding=0,
                 ),
                 widget.Systray(
@@ -328,18 +340,18 @@ screens = [
                     font=fonts["primary"],
                     foreground=colors[14],
                     background=colors[0],
-                    fontsize=28,
+                    fontsize=fontSize["frame"],
                     padding=0,
                 ),
             ],
-            40,
-            margin=[0, 0, 21, 0],
-            border_width=[0, 0, 3, 0],
-            border_color="#3b4252",
+            28,
+            margin=[3, 12, 0, 12],
+            border_width=[5, 5, 5, 5],
+            border_color="#2e3440",
         ),
-        bottom=bar.Gap(18),
-        left=bar.Gap(18),
-        right=bar.Gap(18),
+        bottom=bar.Gap(0),
+        left=bar.Gap(0),
+        right=bar.Gap(0),
     )
 ]
 
