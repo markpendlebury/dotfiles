@@ -12,7 +12,7 @@ from qtile_extras.widget.decorations import RectDecoration
 
 @hook.subscribe.startup
 def autostart():
-    subprocess.run("~/.config/qtile/autostart.sh")
+    subprocess.run(os.getcwd() + "/.config/qtile/autostart.sh")
 
 
 colors = [
@@ -174,7 +174,8 @@ group_box_settings = {
 
 screens = [
     Screen(
-        wallpaper="~/Pictures/Wallpapers/6GMqcVqw.png",
+        # wallpaper="~/Pictures/Wallpapers/6GMqcVqw.png",
+        wallpaper="~/.config/wallpapers/SwEMb5MQ.png",
         wallpaper_mode="fill",
         top=bar.Bar(
             [
@@ -345,6 +346,7 @@ screens = [
                 ),
             ],
             28,
+            #
             margin=[3, 12, 0, 12],
             border_width=[5, 5, 5, 5],
             border_color="#2e3440",
